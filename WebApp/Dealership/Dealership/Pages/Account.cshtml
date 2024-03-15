@@ -1,0 +1,120 @@
+﻿@page
+@model Dealership.Pages.AccountModel
+@{
+    ViewData["Title"] = "Account";
+}
+<div class="container content py-4 px-4" style="height: 100%; width: 50%;">
+    <h1 class="h1">Account</h1>
+    <div class="container content" style="background-color:gray; backdrop-filter:opacity(0.5)">
+        <h2>Personal Information</h2>
+            <p><b>Name: </b>@Model.UserName</p>
+            <p><b>E-mail: </b>@Model.UserEmail</p>
+        @if (Model.UserPremium)
+        {
+            <p><b>Premium: </b>Yes</p>
+        }
+        else
+        {
+            <p><b>Premium: </b>No</p>
+            <form method="post" asp-page-handler="BecomePremium">
+                <button type="submit" class="btn btn-success btn-sm">Become Premium!</button>
+            </form>
+        }
+        @if(Model.UserAppointments.Count > 0)
+        {
+            <h2 class="h2">Appointments</h2>
+        }
+        
+        
+        @if(ViewData["rateUpdated"] != null && Convert.ToBoolean(ViewData["rateUpdated"]) == false)
+        {
+            <h1 class="h1 text-danger">Not Updated</h1>
+        }
+        else if (ViewData["rateUpdated"] != null && Convert.ToBoolean(ViewData["rateUpdated"]) == true)
+        {
+            <h1 class="h1 text-success">Rate Updated!</h1>
+        }
+        @foreach(var appointment in Model.UserAppointments)
+        {
+            <div class="container d-inline-flex">
+                <p><b> ID: </b>@appointment.ID </p>
+                <p><b> UserID: </b>@appointment.CustomerId</p>
+                <p><b> Date: </b>@appointment.Date.ToString("d")</p>
+                <p><b> Status: </b>@appointment.Status </p>
+                <p><b> Bike: </b>@Model.BikesAppointed[Model.UserAppointments.IndexOf(appointment)].Brand @Model.BikesAppointed[Model.UserAppointments.IndexOf(appointment)].Model</p>
+                @if(appointment.Status == "Done")
+                {
+                    <form method="post" asp-page-handler="RatingForm">
+                        <select asp-for="Rate" name="Rate">
+                            @for(int i = 1; i <= 5; i++)
+                            {
+                                <option value="@i">@i.ToString()</option>
+                            }
+                        </select>
+                        <input type="hidden" asp-for="RateUserID" name="RateUserID" value="@HttpContext.Session.GetInt32("UserId")">
+                        <input type="hidden" asp-for="RateBikeID" name="RateBikeID" value="@Model.BikesAppointed[Model.UserAppointments.IndexOf(appointment)].Id">
+                        <button type="submit" class="btn btn-success btn-sm">Rate</button>
+                        
+                    </form>    
+                }
+            </div>
+        }
+        @if (Model.UserAppointments.Count > 0)
+        {
+            <br/>
+        }
+        <div class="container">
+            <h1 class="h1">
+                User Settings
+            </h1>
+
+            @if (ViewData["UserSettingsExistence"] != null && Convert.ToBoolean(ViewData["UserSettingsExistence"]) == true)
+            {
+                <p><b> Preferred Brand: </b>@Model.UserSettings.PrefBrand</p>
+                <p><b> Minimum Price: </b>@Model.UserSettings.MinPrice.ToString()</p>
+                <p><b> Maximum Price: </b>@Model.UserSettings.MaxPrice.ToString()</p>
+                
+            }
+            @if (Convert.ToBoolean(ViewData["MinPriceBigger"]) == true)
+            {
+                <h3 class="h3 text-danger">Minimum price is bigger than Maximum Price.</h3>    
+            }
+            
+            <form method="post" asp-page-handler="SettingsForm">
+                <label for="PrefBrand">Preferred Brand:</label>
+                <select asp-for="UserSettings.PrefBrand" name="PrefBrand">
+                    @foreach(var brand in Model.BikeBrands)
+                    {
+                        <option value="@brand">@brand</option>
+                    }
+                </select>
+
+                <lable for="MinPrice">Minimum Price</lable>
+                <select asp-for="UserSettings.MinPrice" name="MinPrice">
+                    @if (Convert.ToBoolean(ViewData["UserSettingsExistence"]) == true)
+                    {
+                        for (int i = 1000; i < Model.UserSettings.MaxPrice; i += 1000)
+                        {
+                            <option value="@i">@i.ToString()</option>
+                        }
+                    }
+                    else
+                    {
+                        for (int i = 1000; i < 50000; i += 1000)
+                        {
+                            <option value="@i">@i.ToString()</option>
+                        }
+                    }
+                </select>
+                <lable for="MaxPrice">Maximum Price</lable>
+                <select asp-for="UserSettings.MaxPrice" name="MaxPrice">
+                    @for (int i = 1000; i < 50000; i += 1000)
+                        {
+                            <option value="@i">@i.ToString()</option>
+                        }
+                </select>
+                <button type="submit" class="btn btn-success btn-sm">Apply Settings</button>
+            </form>
+        </div>
+    </div>
+</div>

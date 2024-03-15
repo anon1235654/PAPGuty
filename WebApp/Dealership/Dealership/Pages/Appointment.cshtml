@@ -1,0 +1,36 @@
+﻿@page
+@model Dealership.Pages.AppointmentModel
+@{
+    <div class="container content py-4 px-4" style="height: 100%; width: 50%;">
+        <h2 class="h2 text-center">Are you sure you want to make an appointment for <b>@HttpContext.Session.GetString("NameBikeToAppoint")</b>?</h2>
+        <div class="d-inline text-center">
+            @if (Convert.ToBoolean(ViewData["invalidDate"]))
+            {
+                <h2 class="h2 text-danger">Invalid Date</h2>
+            }
+            @if (Convert.ToBoolean(ViewData["busyDate"]))
+            {
+                <h2 class="h2 text-danger">Date occupied</h2>
+            }
+            @if (Convert.ToBoolean(ViewData["userAppointmentExists"]))
+            {
+                <h2 class="h2 text-danger">You already have pending requests or scheduled appointments.</h2>
+            }
+            <form method="post">
+                <label for="Date">Preferred Date:</label>
+                    <input type="date" asp-for="Date" name="Date" value=@DateTime.Today.ToString() min=@DateTime.Today.ToString() max=@DateTime.Today.AddYears(10).ToString()>
+                <select asp-for="TimePref" name="TimePref">
+                    @for(int time = 9; time <= 17; time++)
+                    {
+                        int finalTime = time + 1;
+                        <option value="@time - @finalTime">@time.ToString() - @finalTime.ToString()</option>
+                    }
+                </select>
+                <br>
+                <br>
+                <button type="submit" class="btn btn-success" name="confirmAppointment">Confirm</button>
+                <a asp-page="/Bikes" class="btn btn-danger">Cancel</a>
+           </form>
+        </div>
+    </div>
+}

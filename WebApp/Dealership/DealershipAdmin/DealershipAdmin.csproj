@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImplicitUsings>enable</ImplicitUsings>
+	<OutputType>WindowsApplication</OutputType>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\AdminClasses\AdminClasses.csproj" />
+    <ProjectReference Include="..\DataAcess\DataAccess.csproj" />
+    <ProjectReference Include="..\SharedLib\EntityClasses.csproj" />
+  </ItemGroup>
+
+</Project>

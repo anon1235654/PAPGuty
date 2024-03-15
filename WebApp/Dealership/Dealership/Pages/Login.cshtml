@@ -1,0 +1,49 @@
+﻿
+@page
+@model Dealership.Pages.LoginModel
+@{
+    ViewData["Title"] = "Login";
+}
+
+<div class="container content py-4 px-4" style="height: 100%; width: 50%;">
+    <figure class="text-center">
+        <h1>Login</h1>
+        @if (ViewData["IncorrectCredentials"] != null && (bool)ViewData["IncorrectCredentials"])
+        {
+            <h1 style="color:red">Invalid Credentials</h1>
+        }
+        
+    </figure>
+    <div class="container login">
+        @if (ViewData["EmptyCredentials"] != null && (bool)ViewData["EmptyCredentials"])
+        {
+            <div asp-validation-summary="All" class="text-danger"></div>
+        }
+        <form method="post">
+            <div class="mb-3 mt-3">
+                <figure class="text-center">
+                    <label class="form-label label-center" for="email">E-mail: </label>
+                    <input asp-for ="User.Email" class="form-control mx-auto" style="width: 30%;" type="email" name="Email"
+                           id="email">
+                    <span asp-validation-for="User.Email" style="color:red"></span>
+                </figure>
+            </div>
+            <div class="mb-3 mt-3">
+                <figure class="text-center">
+                    <label class="form-label" for="password">Password:</label>
+                    <input asp-for="User.Password" class="form-control mx-auto" style="width: 30%;" type="password" name="Password"
+                           id="password">
+                    <span asp-validation-for="User.Password" style="color:red"></span>
+                </figure>
+            </div>
+            <div class="mb-3 mt-3">
+                <input class="form-control mx-auto" style="width: 30%; background-color: rgb(85, 85, 85); border: 1px; border-color: black; font-weight: 700; color: black; text-decoration:underline;" type="submit" name="login-submit"
+                       id="login-submit" value="Login">
+            </div>
+                <input asp-for="User.Name" type="hidden" name="Name" value="placeholder"/>
+            <div class="mb-3 mt-3">
+                <button class="form-control mx-auto" style="width: 30%; background-color: rgb(85, 85, 85); border: 1px; border-color: black; font-weight: 700; "><a asp-page="/Register" style="color: black;">Register</a></button>
+            </div>
+        </form>
+    </div>
+</div>

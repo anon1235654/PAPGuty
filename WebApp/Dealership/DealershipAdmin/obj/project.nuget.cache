@@ -1,0 +1,36 @@
+{
+  "version": 2,
+  "dgSpecHash": "0ZyJ68jP1tpIU0pUjRWpajsFm9lzeGhevRlVFtDDXUEBDMSH5ssPElUcemGxbaIPvGKYz0CubaYLrirkYO5+/w==",
+  "success": false,
+  "projectFilePath": "C:\\Users\\sebas\\OneDrive - FHICT\\Fontys\\Sem_2\\s2_individualassignment\\WebApp\\Dealership\\DealershipAdmin\\DealershipAdmin.csproj",
+  "expectedPackageFiles": [],
+  "logs": [
+    {
+      "code": "NU1201",
+      "level": "Error",
+      "message": "Project AdminClasses is not compatible with net6.0-windows7.0 (.NETCoreApp,Version=v6.0). Project AdminClasses supports: net7.0 (.NETCoreApp,Version=v7.0)",
+      "libraryId": "AdminClasses",
+      "targetGraphs": [
+        "net6.0-windows7.0"
+      ]
+    },
+    {
+      "code": "NU1201",
+      "level": "Error",
+      "message": "Project EntityClasses is not compatible with net6.0-windows7.0 (.NETCoreApp,Version=v6.0). Project EntityClasses supports: net7.0 (.NETCoreApp,Version=v7.0)",
+      "libraryId": "EntityClasses",
+      "targetGraphs": [
+        "net6.0-windows7.0"
+      ]
+    },
+    {
+      "code": "NU1201",
+      "level": "Error",
+      "message": "Project DataAccess is not compatible with net6.0-windows7.0 (.NETCoreApp,Version=v6.0). Project DataAccess supports: net7.0 (.NETCoreApp,Version=v7.0)",
+      "libraryId": "DataAccess",
+      "targetGraphs": [
+        "net6.0-windows7.0"
+      ]
+    }
+  ]
+}

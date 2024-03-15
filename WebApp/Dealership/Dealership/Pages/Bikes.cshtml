@@ -1,0 +1,119 @@
+﻿@page
+@model Dealership.Pages.BikesModel
+@{
+    <div class="container content py-4 px-4" style="height: 100%; width: 50%;">
+        @if (HttpContext.Session.GetInt32("UserId") != null)
+        {
+            <h1 class="h1 text-center">Suggestions For You</h1>
+            <p class="p text-center">(After your preferences)</p>
+            <div class="container">
+                @if (Model.BikeSuggestions.Count > 0)
+                {
+                    @for (int i = 0; i < Model.BikeSuggestions.Count; i += 3)
+                    {
+                        <div class="row">
+                            @for (int j = i; j < i + 3 && j < Model.BikeSuggestions.Count; j++)
+                            {
+                                var bike = Model.BikeSuggestions[j];
+                                <div class="col-md-4">
+                                    <div class="card mb-4">
+                                        @if (!string.IsNullOrEmpty(bike.Image))
+                                        {
+                                            <img class="card-img-top" src="@bike.Image.Trim()" alt="@bike.Brand @bike.Model">
+                                        }
+                                        else
+                                        {
+                                            <img class="card-img-top" src="https://www.mvu.fr/wp-content/themes/motors/assets/images/moto-placeholders/moto-400.jpg" alt="@bike.Brand @bike.Model">
+                                        }
+                                        <div class="card-body">
+                                            <h5 class="card-title">@bike.Brand @bike.Model</h5>
+                                            <p class="card-text">Price: @bike.Price.ToString()€</p>
+                                            @if (Model.BikeRate.ContainsKey(bike.Id) && Model.BikeRate[bike.Id].ToString() != "NaN")
+                                            {
+                                                <p class="card-text">Average Rating: @Model.BikeRate[bike.Id].ToString()</p>
+                                            }
+                                            else
+                                            {
+                                                <p class="card-text">Average Rating: No Data Available.</p>
+                                            }
+                                            @if (HttpContext.Session.GetInt32("UserId") != null)
+                                            {
+                                                <form method="post" asp-page-handler="SendBikeToAppoint">
+                                                    <input type="hidden" asp-for="BikeIdToAppoint" value="@bike.Id" name="BikeIdToAppoint">
+                                                    <input type="hidden" asp-for="BikeRate" value="@Model.BikeRate" name="BikeRate">
+                                                    <input type="hidden" asp-for="BikeBrandToAppoint" value="@bike.Brand" name="BikeBrandToAppoint">
+                                                    <input type="hidden" asp-for="BikeModelToAppoint" value="@bike.Model" name="BikeModelToAppoint">
+                                                    <input type="hidden" asp-for="UserSettings" value="@Model.UserSettings" name="BikeModelToAppoint">
+                                                    <button type="submit" class="btn btn-danger">Appointment</button>
+                                                </form>
+                                            }
+                                            else
+                                            {
+                                                <a asp-page="/Login" class="btn btn-danger">Appointment</a>
+                                            }
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                    }
+                }
+                else
+                {
+                    <h5 class="h5">No suggestions available for you.</h5>
+                }
+            </div>
+        }
+    
+        <h1 class="h1 text-center">Our Bikes</h1>
+        <div class="container">
+            @for (int i = 0; i < Model.BikeList.Count; i += 3)
+            {
+                <div class="row">
+                    @for (int j = i; j < i + 3 && j < Model.BikeList.Count; j++)
+                    {
+                        var bike = Model.BikeList[j];
+                        <div class="col-md-4">
+                            <div class="card mb-4">
+                                @if (!string.IsNullOrEmpty(bike.Image))
+                                {
+                                    <img class="card-img-top" src="@bike.Image.Trim()" alt="@bike.Brand @bike.Model">
+                                }
+                                else
+                                {
+                                    <img class="card-img-top" src="https://www.mvu.fr/wp-content/themes/motors/assets/images/moto-placeholders/moto-400.jpg" alt="@bike.Brand @bike.Model">
+                                }
+                                <div class="card-body">
+                                    <h5 class="card-title">@bike.Brand @bike.Model</h5>
+                                    <p class="card-text">Price: @bike.Price.ToString()€</p>
+                                    @if (Model.BikeRate.ContainsKey(bike.Id) && Model.BikeRate[bike.Id].ToString() != "NaN")
+                                    {
+                                        <p class="card-text">Average Rating: @Model.BikeRate[bike.Id].ToString()</p>
+                                    }
+                                    else
+                                    {
+                                        <p class="card-text">Average Rating: No Data Available.</p>
+                                    }
+                                    @if (HttpContext.Session.GetInt32("UserId") != null)
+                                    {
+                                        <form method="post" asp-page-handler="SendBikeToAppoint">
+                                            <input type="hidden" asp-for="BikeIdToAppoint" value="@bike.Id" name="BikeIdToAppoint">
+                                            <input type="hidden" asp-for="BikeRate" value="@Model.BikeRate" name="BikeRate">
+                                            <input type="hidden" asp-for="BikeBrandToAppoint" value="@bike.Brand" name="BikeBrandToAppoint">
+                                            <input type="hidden" asp-for="BikeModelToAppoint" value="@bike.Model" name="BikeModelToAppoint">
+                                            <button type="submit" class="btn btn-danger">Appointment</button>
+                                        </form>
+                                    }
+                                    else
+                                    {
+                                        <a asp-page="/Login" class="btn btn-danger">Appointment</a>
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            }
+        </div>
+    </div>
+}

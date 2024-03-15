@@ -1,0 +1,33 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+	  <RuntimeIdentifier>win-x64</RuntimeIdentifier>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+	 
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Remove="wwwroot\css - Copy\style.css" />
+    <Content Remove="wwwroot\css\style.css" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\css - Copy\style.css" />
+    <None Include="wwwroot\css\style.css" />
+    <None Include="wwwroot\css\pictures\backgroundimghome.jpeg" />
+    <None Include="wwwroot\css\pictures\logo.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.5" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\AdminClasses\AdminClasses.csproj" />
+    <ProjectReference Include="..\DataAcess\DataAccess.csproj" />
+    <ProjectReference Include="..\SharedLib\EntityClasses.csproj" />
+  </ItemGroup>
+
+</Project>

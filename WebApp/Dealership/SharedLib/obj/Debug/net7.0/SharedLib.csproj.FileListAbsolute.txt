@@ -1,0 +1,12 @@
+C:\Users\sebas\OneDrive - FHICT\Fontys\Sem_2\s2_individualassignment\WebApp\Dealership\SharedLib\bin\Debug\net7.0\SharedLib.deps.json
+C:\Users\sebas\OneDrive - FHICT\Fontys\Sem_2\s2_individualassignment\WebApp\Dealership\SharedLib\bin\Debug\net7.0\SharedLib.dll
+C:\Users\sebas\OneDrive - FHICT\Fontys\Sem_2\s2_individualassignment\WebApp\Dealership\SharedLib\bin\Debug\net7.0\SharedLib.pdb
+C:\Users\sebas\OneDrive - FHICT\Fontys\Sem_2\s2_individualassignment\WebApp\Dealership\SharedLib\obj\Debug\net7.0\SharedLib.csproj.AssemblyReference.cache
+C:\Users\sebas\OneDrive - FHICT\Fontys\Sem_2\s2_individualassignment\WebApp\Dealership\SharedLib\obj\Debug\net7.0\SharedLib.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\sebas\OneDrive - FHICT\Fontys\Sem_2\s2_individualassignment\WebApp\Dealership\SharedLib\obj\Debug\net7.0\SharedLib.AssemblyInfoInputs.cache
+C:\Users\sebas\OneDrive - FHICT\Fontys\Sem_2\s2_individualassignment\WebApp\Dealership\SharedLib\obj\Debug\net7.0\SharedLib.AssemblyInfo.cs
+C:\Users\sebas\OneDrive - FHICT\Fontys\Sem_2\s2_individualassignment\WebApp\Dealership\SharedLib\obj\Debug\net7.0\SharedLib.csproj.CoreCompileInputs.cache
+C:\Users\sebas\OneDrive - FHICT\Fontys\Sem_2\s2_individualassignment\WebApp\Dealership\SharedLib\obj\Debug\net7.0\SharedLib.dll
+C:\Users\sebas\OneDrive - FHICT\Fontys\Sem_2\s2_individualassignment\WebApp\Dealership\SharedLib\obj\Debug\net7.0\refint\SharedLib.dll
+C:\Users\sebas\OneDrive - FHICT\Fontys\Sem_2\s2_individualassignment\WebApp\Dealership\SharedLib\obj\Debug\net7.0\SharedLib.pdb
+C:\Users\sebas\OneDrive - FHICT\Fontys\Sem_2\s2_individualassignment\WebApp\Dealership\SharedLib\obj\Debug\net7.0\ref\SharedLib.dll

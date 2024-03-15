@@ -1,0 +1,17 @@
+C:\Users\sebas\OneDrive - FHICT\Fontys\Sem_2\s2_individualassignment\WebApp\Dealership\AdminClasses\bin\Debug\net7.0\AdminClasses.deps.json
+C:\Users\sebas\OneDrive - FHICT\Fontys\Sem_2\s2_individualassignment\WebApp\Dealership\AdminClasses\bin\Debug\net7.0\AdminClasses.dll
+C:\Users\sebas\OneDrive - FHICT\Fontys\Sem_2\s2_individualassignment\WebApp\Dealership\AdminClasses\bin\Debug\net7.0\AdminClasses.pdb
+C:\Users\sebas\OneDrive - FHICT\Fontys\Sem_2\s2_individualassignment\WebApp\Dealership\AdminClasses\bin\Debug\net7.0\DataAccess.dll
+C:\Users\sebas\OneDrive - FHICT\Fontys\Sem_2\s2_individualassignment\WebApp\Dealership\AdminClasses\bin\Debug\net7.0\EntityClasses.dll
+C:\Users\sebas\OneDrive - FHICT\Fontys\Sem_2\s2_individualassignment\WebApp\Dealership\AdminClasses\bin\Debug\net7.0\DataAccess.pdb
+C:\Users\sebas\OneDrive - FHICT\Fontys\Sem_2\s2_individualassignment\WebApp\Dealership\AdminClasses\bin\Debug\net7.0\EntityClasses.pdb
+C:\Users\sebas\OneDrive - FHICT\Fontys\Sem_2\s2_individualassignment\WebApp\Dealership\AdminClasses\obj\Debug\net7.0\AdminClasses.csproj.AssemblyReference.cache
+C:\Users\sebas\OneDrive - FHICT\Fontys\Sem_2\s2_individualassignment\WebApp\Dealership\AdminClasses\obj\Debug\net7.0\AdminClasses.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\sebas\OneDrive - FHICT\Fontys\Sem_2\s2_individualassignment\WebApp\Dealership\AdminClasses\obj\Debug\net7.0\AdminClasses.AssemblyInfoInputs.cache
+C:\Users\sebas\OneDrive - FHICT\Fontys\Sem_2\s2_individualassignment\WebApp\Dealership\AdminClasses\obj\Debug\net7.0\AdminClasses.AssemblyInfo.cs
+C:\Users\sebas\OneDrive - FHICT\Fontys\Sem_2\s2_individualassignment\WebApp\Dealership\AdminClasses\obj\Debug\net7.0\AdminClasses.csproj.CoreCompileInputs.cache
+C:\Users\sebas\OneDrive - FHICT\Fontys\Sem_2\s2_individualassignment\WebApp\Dealership\AdminClasses\obj\Debug\net7.0\AdminClasses.csproj.CopyComplete
+C:\Users\sebas\OneDrive - FHICT\Fontys\Sem_2\s2_individualassignment\WebApp\Dealership\AdminClasses\obj\Debug\net7.0\AdminClasses.dll
+C:\Users\sebas\OneDrive - FHICT\Fontys\Sem_2\s2_individualassignment\WebApp\Dealership\AdminClasses\obj\Debug\net7.0\refint\AdminClasses.dll
+C:\Users\sebas\OneDrive - FHICT\Fontys\Sem_2\s2_individualassignment\WebApp\Dealership\AdminClasses\obj\Debug\net7.0\AdminClasses.pdb
+C:\Users\sebas\OneDrive - FHICT\Fontys\Sem_2\s2_individualassignment\WebApp\Dealership\AdminClasses\obj\Debug\net7.0\ref\AdminClasses.dll
